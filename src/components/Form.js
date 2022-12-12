@@ -1,5 +1,9 @@
+// import React Bootstrap components
+import { useState } from "react";
+import { Button } from "react-bootstrap";
+
 // import css modules
-import "./Form.css";
+import cssModules from "./Form.module.css";
 
 const styles = {
   form: {
@@ -25,36 +29,80 @@ const styles = {
   },
 };
 
+function FormComponent() {
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    gender: "",
+  });
 
-function Form() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Username :" + form.username);
+    console.log("Email :" + form.email);
+    console.log("Gender :" + form.gender);
+  };
+
+  function handleChange(e) {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+    // console.log(e.target.id, e.target.value)
+    console.log(form)
+  }
+
   return (
     <div>
-      <form style={styles.form}>
+      <form style={styles.form} onSubmit={handleSubmit}>
         <div style={styles.formGroup}>
           <label htmlFor="username" style={styles.formLabel}>
             Username
           </label>
           <input
-            id="username"
+            name="username"
             placeholder="Input username"
             style={styles.formInput}
+            value={form.username}
+            onChange={handleChange}
           />
         </div>
-        <div className="formGroup">
-          <label htmlFor="email" className={"formLabel"}>
+        <div className={cssModules.formGroup}>
+          <label htmlFor="email" className={cssModules.formLabel}>
             Email
           </label>
           <input
-            id="email"
+            name="email"
             type="email"
             placeholder="Input email"
-            className={"formInput"}
+            className={cssModules.formInput}
+            value={form.email}
+            onChange={handleChange}
           />
         </div>
+        {/* css global */}
+        <div className="form-group">
+          <label htmlFor="gender" className="form-label">
+            Gender
+          </label>
+          <select
+            name="gender"
+            className="form-select"
+            defaultValue="Choose..."
+            onChange={handleChange}
+          >
+            <option>Choose...</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
         {/* code here */}
+        <Button type="submit" variant="success" className="w-100">
+          Submit
+        </Button>
       </form>
     </div>
-  )
+  );
 }
 
-export default Form
+export default FormComponent;

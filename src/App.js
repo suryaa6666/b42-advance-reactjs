@@ -1,14 +1,17 @@
-// import styles here
+// import css bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Form from "./components/Form";
+// import styles.css
+import "./styles/styles.css";
 
 // import components here
+import Form from "./components/Form";
 
 function App() {
   return (
     // code inside div
     <div>
-      <Form />
+      <Form />      
     </div>
   );
 }

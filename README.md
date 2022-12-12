@@ -1,6 +1,7 @@
-# Global css
+# Styling with React Bootstrap
 
-This branch is the result of practice to apply global css stylesheet to component.\
-You can apply global css stylesheet by import it in the root component\
-and child component can apply the style without import again.\
-Reference: [Create React App](https://create-react-app.dev/docs/adding-a-stylesheet).
+Styling web app from scratch is very time consuming.  
+If we want our web application to be completed in a faster time,  
+we can use css frameworks to make styling faster.  
+There are many CSS frameworks, but the easier one is React Bootstrap.  
+Reference: [React-Bootstrap](https://react-bootstrap.github.io/)
