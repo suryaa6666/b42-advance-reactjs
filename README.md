@@ -1,5 +1,6 @@
-# Adding a CSS Modules
+# Global css
 
-CSS Modules are CSS files in which all class names and animation names are scoped locally by default.\
-React supports CSS Modules alongside regular stylesheets using the name.module.css file naming convention.\
-CSS Modules allows the scoping of CSS by automatically creating a unique classname of the format filename_classname\_\_hash. [Css Modules](https://css-tricks.com/css-modules-part-1-need/).
+This branch is the result of practice to apply global css stylesheet to component.\
+You can apply global css stylesheet by import it in the root component\
+and child component can apply the style without import again.\
+Reference: [Create React App](https://create-react-app.dev/docs/adding-a-stylesheet).

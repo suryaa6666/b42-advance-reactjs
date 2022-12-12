@@ -1,44 +1,54 @@
 // import css modules
-import FormStyling from './FormStyling.module.css'
+import "./Form.css";
 
-// const styles = {
-//   form: {
-//     margin: "16px 20% 0",
-//   },
-//   formGroup: {
-//     marginBottom: "16px",
-//   },
-//   formLabel: {
-//     marginBottom: "8px",
-//     display: "inline-block",
-//   },
-//   formInput: {
-//     display: "block",
-//     width: "100%",
-//     padding: ".375rem .75rem",
-//     fontSize: "1rem",
-//     lineHeight: 1.5,
-//     color: "#212529",
-//     backgroundColor: "#fff",
-//     border: "1px solid #ced4da",
-//     borderRadius: ".25rem",
-//   },
-// };
+const styles = {
+  form: {
+    margin: "16px 20% 0",
+  },
+  formGroup: {
+    marginBottom: "16px",
+  },
+  formLabel: {
+    marginBottom: "8px",
+    display: "inline-block",
+  },
+  formInput: {
+    display: "block",
+    width: "100%",
+    padding: ".375rem .75rem",
+    fontSize: "1rem",
+    lineHeight: 1.5,
+    color: "#212529",
+    backgroundColor: "#fff",
+    border: "1px solid #ced4da",
+    borderRadius: ".25rem",
+  },
+};
 
 
 function Form() {
-  console.log(FormStyling)
   return (
     <div>
-      <form className={FormStyling.form}>
-        <div className={FormStyling.formGroup}>
-          <label htmlFor="username" className={FormStyling.formLabel}>
+      <form style={styles.form}>
+        <div style={styles.formGroup}>
+          <label htmlFor="username" style={styles.formLabel}>
             Username
           </label>
           <input
             id="username"
             placeholder="Input username"
-            className={FormStyling.formInput}
+            style={styles.formInput}
+          />
+        </div>
+        <div className="formGroup">
+          <label htmlFor="email" className={"formLabel"}>
+            Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Input email"
+            className={"formInput"}
           />
         </div>
         {/* code here */}
