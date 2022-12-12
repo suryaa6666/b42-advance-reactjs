@@ -1,38 +1,50 @@
-import Styles from "./Style"
+// import css modules
+import FormStyling from './FormStyling.module.css'
 
-// create Form component
+// const styles = {
+//   form: {
+//     margin: "16px 20% 0",
+//   },
+//   formGroup: {
+//     marginBottom: "16px",
+//   },
+//   formLabel: {
+//     marginBottom: "8px",
+//     display: "inline-block",
+//   },
+//   formInput: {
+//     display: "block",
+//     width: "100%",
+//     padding: ".375rem .75rem",
+//     fontSize: "1rem",
+//     lineHeight: 1.5,
+//     color: "#212529",
+//     backgroundColor: "#fff",
+//     border: "1px solid #ced4da",
+//     borderRadius: ".25rem",
+//   },
+// };
+
+
 function Form() {
+  console.log(FormStyling)
   return (
-    // code inside div
-    <div
-      style={{
-        display: "flex",
-        height: "100vh",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      {/* form */}
-      <form
-        style={{
-          border: "2px solid black",
-          display: "flex",
-          flexDirection: "column",
-          padding: "0 20px 50px 20px",
-          borderRadius: "5px"
-        }}
-      >
-        <h1> Login </h1>
-        <input type="text" placeholder="Email..." style={Styles.textInput} />
-        <input
-          type="password"
-          placeholder="Password..."
-          style={Styles.textInput}
-        />
-        <input type="button" value={"Submit"} style={{ backgroundColor: "#1d3557", color: "#f1faee", ...Styles.textInput}} />
+    <div>
+      <form className={FormStyling.form}>
+        <div className={FormStyling.formGroup}>
+          <label htmlFor="username" className={FormStyling.formLabel}>
+            Username
+          </label>
+          <input
+            id="username"
+            placeholder="Input username"
+            className={FormStyling.formInput}
+          />
+        </div>
+        {/* code here */}
       </form>
     </div>
-  );
+  )
 }
 
-export default Form;
+export default Form
