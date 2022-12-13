@@ -1,6 +1,18 @@
+import { useEffect } from "react";
 import { Container } from "react-bootstrap";
+import { useNavigate, Link } from "react-router-dom";
 
 function Profile() {
+  const navigate = useNavigate();
+
+  function handleLogin() {
+    // aisdjfiodsjfdiosf backend
+    console.log("sdfsf")
+    setTimeout(() => {
+      navigate('/profile')
+    }, 2000)
+  }
+
   return (
     <Container className="text-center">
       <p className="h1">Profile</p>
@@ -13,6 +25,11 @@ function Profile() {
         non. Quisque massa lacus, faucibus non aliquet id, interdum mattis
         tellus.
       </p>
+      {/* <Link to="/about">
+        <Button>This click</Button>
+      <Link> */}
+      <Link to="/">Testing</Link>
+      {<button onClick={handleLogin}>Login</button>}
     </Container>
   );
 }

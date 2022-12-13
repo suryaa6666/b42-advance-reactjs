@@ -1,5 +1,5 @@
-# Basic Navigation and Routing
+# useHistory
 
-When we decide to build web app using reactJs, there is a little bit different approach for handling switch between pages.  
-To handle that, we need to use a package called react-router-dom  
-Reference: [React Router DOM](https://reactrouter.com/web/guides/quick-start).
+React-Router-DOM has useful hooks named useHistory.  
+The useHistory hook gives you access to the history instance that you may use to navigate.  
+Reference: [React Router DOM - useHistory](https://reactrouter.com/web/api/Hooks/usehistory).
