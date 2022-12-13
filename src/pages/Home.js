@@ -2,10 +2,10 @@ import { Container, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
-  // call useNavigate to get navigate instances
+  // call useNavigate to get history instances
   const navigate = useNavigate();
 
-  // create function for handle navigate to another pages
+  // create function for handle push to another pages
   // using button
   const handleNavigateToSignIn = () => {
     navigate("/signin");

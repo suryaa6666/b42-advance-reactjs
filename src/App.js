@@ -7,13 +7,11 @@ import About from "./pages/About";
 import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn";
 import DetailUser from "./pages/DetailUser";
+
 import PrivateRoute from "./components/PrivateRoute";
-import { useState } from "react";
-// import component here
+import DetailAbout from "./components/DetailAbout";
 
 function App() {
-  const [isLogin, setIsLogin] = useState(false);
-
   return (
     <Router>
       <div>
@@ -33,17 +31,18 @@ function App() {
       </div>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/signin" element={<SignIn />} />
+        {/* protect this routes with <PrivateRoute> */}
         <Route
           exact
-          path="/signin"
-          element={<SignIn isLogin={isLogin} setLogin={setIsLogin} />}
+          path="/detail-about"
+          element={<DetailAbout name="Sidik" />}
         />
-        <Route element={<PrivateRoute isLogin={isLogin} />}>
+        {/* <Route exact path="/" element={<PrivateRoute />}>
           <Route exact path="/about" element={<About />} />
           <Route exact path="/profile" element={<Profile />} />
-          <Route exact path="/detail/:id" element={<DetailUser />} />
-        </Route>
-        {/* change route for page about, profile, and user:id to private route */}
+          <Route exact path="/users/:id" element={<DetailUser />} />
+        </Route> */}
       </Routes>
     </Router>
   );
