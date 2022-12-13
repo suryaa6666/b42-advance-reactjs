@@ -1,7 +1,5 @@
-# Styling with React Bootstrap
+# Basic Navigation and Routing
 
-Styling web app from scratch is very time consuming.  
-If we want our web application to be completed in a faster time,  
-we can use css frameworks to make styling faster.  
-There are many CSS frameworks, but the easier one is React Bootstrap.  
-Reference: [React-Bootstrap](https://react-bootstrap.github.io/)
+When we decide to build web app using reactJs, there is a little bit different approach for handling switch between pages.  
+To handle that, we need to use a package called react-router-dom  
+Reference: [React Router DOM](https://reactrouter.com/web/guides/quick-start).
