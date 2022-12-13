@@ -1,5 +1,4 @@
-# useHistory
+# Route with params
 
-React-Router-DOM has useful hooks named useHistory.  
-The useHistory hook gives you access to the history instance that you may use to navigate.  
-Reference: [React Router DOM - useHistory](https://reactrouter.com/web/api/Hooks/usehistory).
+We can use useParams hooks from react-router-dom that returns an object of key/value pairs of URL parameters. Use it to access match.params of the current Route.  
+Reference: [React Router DOM - useParams](https://reactrouter.com/web/api/Hooks/useparams).
