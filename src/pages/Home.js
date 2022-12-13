@@ -5,7 +5,7 @@ function Home() {
   // call useNavigate to get navigate instances
   const navigate = useNavigate();
 
-  // create function for handle push to another pages
+  // create function for handle navigate to another pages
   // using button
   const handleNavigateToSignIn = () => {
     navigate("/signin");

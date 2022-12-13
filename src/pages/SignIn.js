@@ -1,6 +1,8 @@
 import { Container, Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-const Signin = () => {
+const Signin = ({ isLogin, setLogin }) => {
+  const navigate = useNavigate()
   return (
     <Container>
       <Form>
@@ -18,8 +20,15 @@ const Signin = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+        <Button
+          variant={!isLogin ? "primary" : "danger"}
+          type="button"
+          onClick={() => {
+            setLogin(!isLogin);
+            navigate("/profile");
+          }}
+        >
+          {!isLogin ? "Login" : "Logout"}
         </Button>
       </Form>
     </Container>

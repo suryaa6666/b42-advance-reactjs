@@ -6,15 +6,17 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn";
+import DetailUser from "./pages/DetailUser";
+import PrivateRoute from "./components/PrivateRoute";
+import { useState } from "react";
 // import component here
-import DetailUser from "./pages/DetailUser"
-
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+
   return (
     <Router>
       <div>
-        {/* Setup navigation element */}
         <nav>
           <ul>
             <li>
@@ -29,14 +31,19 @@ function App() {
           </ul>
         </nav>
       </div>
-
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/profile" element={<Profile />} />
-        <Route exact path="/signin" element={<SignIn />} />
-        {/* define new route */}
-        <Route path="/detail/:iduser" element={<DetailUser/>}/>
+        <Route
+          exact
+          path="/signin"
+          element={<SignIn isLogin={isLogin} setLogin={setIsLogin} />}
+        />
+        <Route element={<PrivateRoute isLogin={isLogin} />}>
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/detail/:id" element={<DetailUser />} />
+        </Route>
+        {/* change route for page about, profile, and user:id to private route */}
       </Routes>
     </Router>
   );
